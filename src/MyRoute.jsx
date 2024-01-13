@@ -5,6 +5,7 @@ import Sign from './Sign';
 import Mainpage from './Mainpage';
 import SignUp from './Signup';
 import Login from './Login';
+import Classepage from './Classepage';
 
 const MyRoute = () => {
   return (
@@ -13,6 +14,7 @@ const MyRoute = () => {
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/signup" element={<Sign />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/classpage" element={<Classepage />} />
     </Routes>
   );
 };

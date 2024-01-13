@@ -5,13 +5,13 @@ import styled from 'styled-components';
 
 const Testimonial = () => {
  return (
-    <Div>
+    <Div style={{justifyContent:"center", textAlign:"left"}}>
     <Card >
         <div style={{display:"flex", flexDirection:"row" }}>
-        <div style={{width:"40%"}} >
+        <div style={{width:"40%" , marginLeft:"2rem"}} >
             <img src="assets1.jpg" alt="Description" style={{width:'100%'}}/>
           </div>
-          <div style={{width:"50%"}} >
+          <div style={{width:"60%" , marginLeft:"2rem"}} >
       <CardBody>
         <CardTitle tag="h5">
           TEACHERS
@@ -29,7 +29,7 @@ const Testimonial = () => {
         <CardText tag="h6">
        Rahul Chaubey
         </CardText>
-        <Button color="primary">Teachers, start here</Button>
+        <Button color="primary" style={{ width:"14vw", height:"6vh", borderRadius:"10px", backgroundColor:"#1865f2", color:"white"}}>Teachers, start here</Button>
       </CardBody>
       </div>
       </div>
@@ -39,7 +39,7 @@ const Testimonial = () => {
 };
 const Div = styled.div`
 width: 97vw;
-height:100vh;
+height:70vh;
 overflow:hidden;
 `;
 

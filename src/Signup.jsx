@@ -12,11 +12,27 @@ const Containerr = styled.div`
   align-items: center;
   background-color:#005987;
   gap: 20px;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 100vw;
+`;
+const Div = styled.div`
+  display: flex;
+  width: 44%;
+  background-Color:#0a2a66;
+  color:white;
+  height: 77vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   margin-top: 20px;
-  width: 99vw;
 `;
 const Container = styled.div`
   display: flex;
+  width: 44%;
+  color:white;
+  height: 77vh;
   flex-direction: column;
   align-items: center;
   gap: 20px;
@@ -31,12 +47,12 @@ const Button = styled.button`
 `;
 
 const SignUp = () => {
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState('student');
 
   return (
     <Containerr>
-        
-      <div style={{width:"50%", backgroundColor:"#0a2a66", color:"white"}}>
+      <Div>
+      <div style={{width:"90%", }}>
         <h1>Sign up</h1>
         <p>
           A world-class education for anyone, anywhere. 100% free.
@@ -44,7 +60,7 @@ const SignUp = () => {
           By signing up for Study Academy, you agree to our Terms of use and Privacy Policy.
         </p>
       </div>
-      
+      </Div>  
       {/* Use flexbox to arrange content in a row */}
       <Container>
         <h1>Join Studey Academy as a</h1>

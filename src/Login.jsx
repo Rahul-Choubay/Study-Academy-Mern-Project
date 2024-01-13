@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { GoogleLogin, GoogleLogout, FacebookLogin } from 'react-social-login';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Container = styled.div`
  display: flex;
+ width: 100vw;
+overflow-x:hidden;
  flex-direction: column;
  align-items: center;
  justify-content: center;
@@ -15,6 +18,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     gap:3rem;
+    
  }
 `;
 
@@ -84,6 +88,7 @@ const Login = () => {
  };
 
  return (<>
+ <div style={{width:"98.5vw", overflowX:"hidden"}}>
     <Navbar />
     <Container>
        
@@ -118,6 +123,8 @@ const Login = () => {
       </div>
       </div>
     </Container>
+    <Footer />
+    </div>
     </>
  );
 };

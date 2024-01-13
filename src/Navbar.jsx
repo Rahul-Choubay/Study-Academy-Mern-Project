@@ -42,7 +42,7 @@ const Navbar = () => {
 )}
         </StyledLi>
         <StyledLi>
-          <StyledLink to="/about">
+          <StyledLink to="">
             <input type="search" placeholder="search" />{" "}
           </StyledLink>
         </StyledLi>
@@ -73,7 +73,7 @@ const StyledNav = styled.nav`
   background-color: #333;
   height: 13vh;
   color: #fff;
-  width: 97vw;
+  width: 100vw;
   overflow:hidden;
   display: flex;
   justify-content: space-between;

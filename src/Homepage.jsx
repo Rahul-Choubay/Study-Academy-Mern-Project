@@ -8,7 +8,7 @@ const Homepage = () => {
         <div className="divmain">
             <div className="img">
           <div >
-            <img src="assets.webp" alt="Description" />
+            <img  src="assets.webp" alt="Description" />
           </div>
           </div>
           <div className="Contentdiv">
@@ -46,6 +46,7 @@ const Div = styled.div`
       .img {
         width: 40%;
         height: auto; 
+       margin-left: 2rem;
         img{
             width: 100%;
         }
@@ -59,6 +60,8 @@ const Div = styled.div`
             border:none;
             width: 9vw;
             height:6.5vh;
+            color:white;
+            border-radius:10px;
             margin-left:1rem;
 
         }
