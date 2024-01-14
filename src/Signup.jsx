@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import StudentSignUp from './StudentSignUp';
 import TeacherSignUp from './TeacherSignUp';
 import ParentSignUp from './ParentSignUp';
+import SignUpButtons from './SignUpButtons';
 
 // Create a styled container to display items in a row
 const Containerr = styled.div`
@@ -66,11 +67,7 @@ const SignUp = () => {
         <h1>Join Studey Academy as a</h1>
         
         {/* Buttons are in the same row */}
-        <div style={{ display: 'flex', gap: '20px' }}>
-          <Button onClick={() => setRole('student')}>Student</Button>
-          <Button onClick={() => setRole('teacher')}>Teacher</Button>
-          <Button onClick={() => setRole('parent')}>Parent</Button>
-        </div>
+        <SignUpButtons setRole={setRole} />
         
    
       

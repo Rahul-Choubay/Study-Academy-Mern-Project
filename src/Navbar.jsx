@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mathclasses, Physicclasses } from "./Data";
+import { boardExamData } from "./Data";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -9,122 +9,135 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+
   return (
-    <StyledNav>
-      <ul className="StyledUl">
-        <StyledLi onClick={toggleDropdown}>
-          <StyledLink>Courses</StyledLink>
-          {showDropdown && (
-  <DropdownMenu>
-    <DropdownItem>
-      <h2>Math Classes</h2>
-      {mathclasses.map((math, index) => (
-        <ul key={index}>
-          <li>
-            <a >{math.title}</a>
+    <Navbarstyles>
+      <nav>
+        <ul className="StyledUl">
+        <li className="StyledLi" onClick={toggleDropdown}>
+            <Link className="StyledLink">Course</Link>
+            {showDropdown && (
+              <div className="DropdownMenu">
+                <div className="DropdownItem">
+                  {boardExamData.map((course, index) => (
+                    <div key={index}>
+                      <h3 style={{margin:"1.2rem"}}>{course.title}</h3>
+                      <ul>
+                        {course.classes.map((cls, clsIndex) => (
+                          <li key={clsIndex}>
+                            <Link className="linkk" to={cls.url}>{cls.title}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+          {/* Other Navbar items */}
+          <li className="StyledLi">
+            <Link className="StyledLink" to="">
+              <input type="search" placeholder="search" />
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/">
+              <img src="logo.png" alt="Description" />
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/openai">
+              Get AI Tutoring
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/about">
+              Donate
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/login">
+              Log in
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/signup">
+              Sign up
+            </Link>
           </li>
         </ul>
-      ))}
-    </DropdownItem>
-    <DropdownItem>
-      <h2>Physic Classes</h2>
-      {Physicclasses.map((Physic, index) => (
-        <ul key={index}>
-          <li>
-          <a >{Physic.title}</a>
-           
-          </li>
-        </ul>
-      ))}
-       
-    </DropdownItem>
-  </DropdownMenu>
-)}
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="">
-            <input type="search" placeholder="search" />{" "}
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="/">
-            {" "}
-            <img src="logo.png" alt="Description" />
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="/about">Get AI Tutoring</StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="/about">Donate</StyledLink>
-        </StyledLi>
-        <StyledLiRight>
-          <StyledLink to="/login">Log in</StyledLink>
-        </StyledLiRight>
-        <StyledLiRight>
-          <StyledLink to="/signup">Sign up</StyledLink>
-        </StyledLiRight>
-      </ul>
-    </StyledNav>
+      </nav>
+    </Navbarstyles>
   );
 };
 
-const StyledNav = styled.nav`
-  background-color: #333;
-  height: 13vh;
-  color: #fff;
-  width: 100vw;
-  overflow:hidden;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
+
+const Navbarstyles = styled.div`
+  /* Navbar styles */
+  nav {
+    background-color: #333;
+    height: 12vh;
+    color: #fff;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    z-index: 2; /* Set a z-index for the Navbar */
+  }
+
   .StyledUl {
     list-style-type: none;
     display: flex;
     padding: 0;
   }
-`;
 
+  .StyledLi {
+    position: relative;
+    padding: 5px;
+    margin-left: 1rem;
+    z-index: 1; /* Ensure the dropdown is above other content in the page */
+  }
 
+  .DropdownMenu {
+    position: fixed; /* Position the dropdown fixed to the viewport */
+    top: 30%; /* Center it vertically */
+    left: 0%; /* Center it horizontally */
+    transform: translate(-0%, -39%); /* Center it precisely */
+    background-color: #333; /* Match Navbar background color */
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+     /* Set a higher z-index than the Navbar */
+     .DropdownItem{
+      display: flex;
+    flex-direction: row;
+    margin-left:1rem;
+    .linkk{
+      color:white;
+    }
+     }
+  }
 
-const StyledLi = styled.li`
-position: relative; // Add this line
-  padding: 5px;
-`;
+  .DropdownItem {
+    padding: 10px;
+  }
 
-const StyledLiRight = styled(StyledLi)`
-  margin-left: auto; // This will push the last two items to the right side
-`;
+  .StyledLiRight {
+    margin-left: auto;
+  }
 
-const StyledLink = styled(Link)`
-  color: #fff;
-  text-decoration: none;
-  img {
+  .StyledLink {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .StyledLink img {
     width: 90%;
   }
-  
 `;
-const DropdownMenu = styled.div`
-  background-color: #333;
-  position: absolute;
-  top: 100%; // This ensures it starts just below the StyledLi
-  left: 0;
-  width: 200px; // or whatever width you prefer
-  z-index: 1000; // Ensure it appears above other elements
-`;
-const DropdownItem = styled(Link)`
-  display: block;
-  padding: 10px 15px;
-  color: #fff;
-  text-decoration: none;
-  z-index:1000;
 
-    a{
-    &:hover {
-        text-decoration: underline;
-        color:red;
-      }
-  }
-  
-`;
+
 export default Navbar;
