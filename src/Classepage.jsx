@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { boardExamData } from './Data';
+import Navbar from './Navbar';
 
 const Classepage = () => {
   const { classId } = useParams();
@@ -37,6 +38,8 @@ const Classepage = () => {
   }, [classId]);
 
   return (
+    <div style={{width:"98.5",overflowX:"hidden"}}>
+        <Navbar />
     <div>
       {selectedClass ? (
         <div>
@@ -63,6 +66,7 @@ const Classepage = () => {
       ) : (
         <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 };
