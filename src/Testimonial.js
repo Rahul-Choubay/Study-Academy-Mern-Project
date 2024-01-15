@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const Testimonial = () => {
  return (
@@ -29,7 +30,7 @@ const Testimonial = () => {
         <CardText tag="h6">
        Rahul Chaubey
         </CardText>
-        <Button color="primary" style={{ width:"14vw", height:"6vh", borderRadius:"10px", backgroundColor:"#1865f2", color:"white"}}>Teachers, start here</Button>
+        <Button color="primary" style={{ width:"14vw", height:"6vh", borderRadius:"10px", backgroundColor:"#1865f2", color:"white"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Teachers, start here</Link></Button>
       </CardBody>
       </div>
       </div>

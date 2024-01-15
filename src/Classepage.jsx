@@ -40,10 +40,10 @@ const Classepage = () => {
   return (
     <div style={{width:"98.5",overflowX:"hidden"}}>
         <Navbar />
-    <div>
+    <div style={{display:"flex",marginTop:"0.6rem", marginLeft:"0.8rem", width:"97vw", height:"auto", border:"1px solid black"}}>
       {selectedClass ? (
-        <div>
-          <h2>Class {classId} Details:</h2>
+        <div >
+          <h2 >Class {classId} Details:</h2>
 
           <div>
             <h2>List of Lectures:</h2>
@@ -51,9 +51,13 @@ const Classepage = () => {
               <ul>
                 {selectedClass.lectures.map((lecture) => (
                   <li key={lecture.id}>
-                    <div>
-                      <button onClick={() => handleOpenLecture(lecture.id)}>{lecture.title}</button>
-                      {openLectures.includes(lecture.id) && <p>{lecture.description}</p>}
+                    <div style={{display:"flex", flexDirection:"row", overflowX:"hidden",}}>
+                        <div style={{marginTop:'3rem'}}>
+                      <button onClick={() => handleOpenLecture(lecture.id)} style={{position:"absolute", left:"3rem", marginTop:"-2rem", width:"15vw", height:"6vh"}}>{lecture.title}</button>
+                      </div>
+                      <div>
+                      {openLectures.includes(lecture.id) && <p style={{position:"absolute", right:"10rem"}}>{lecture.description}</p>}
+                      </div>
                     </div>
                   </li>
                 ))}

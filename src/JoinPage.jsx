@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 function JoinPage() {
   return (
     <Div>
     <div className="home-page">
       <h1>Join Study Academy today</h1>
-      <button>Student</button>
-              <button>Teacher</button>
-              <button>Parents</button> 
+      <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></button>
+              <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Teacher</Link></button>
+              <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Parents</Link></button> 
       <a href="/signup" className="button">
         Give today <span className="amount">1999</span>
         <span className="so">・</span>

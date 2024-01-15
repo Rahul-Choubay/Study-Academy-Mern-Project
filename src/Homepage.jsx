@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -15,10 +16,10 @@ const Homepage = () => {
           <div >
             <h2>For every student, every classroom. Real results..</h2>
             <p>We’re a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.</p>
-            <div className="btndiv">
-              <button>Student</button>
-              <button>Teacher</button>
-              <button>Parents</button> {/* Corrected spelling from 'Perents' to 'Parents' */}
+            <div className="btndiv" style={{display:"flex", flexDirection:"row"}}>
+            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></div>  
+            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Teacher</Link></div>  
+            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Parents</Link> </div>  {/* Corrected spelling from 'Perents' to 'Parents' */}
             </div>
           </div>
           </div>
@@ -55,16 +56,21 @@ const Div = styled.div`
       .Contentdiv {
         width: 60%; 
         padding-left: 20px; 
-        button{
+        .btndiv{
+          width:100%;
+        .butt{
             background-color: #1865f2;
             border:none;
             width: 9vw;
             height:6.5vh;
-            color:white;
+        
             border-radius:10px;
             margin-left:1rem;
-
+Link{
+  color:white;
+}
         }
+      }
       }
     }
   }

@@ -321,6 +321,7 @@ export const boardExamData = [
           { id: 34, title: 'Web Accessibility', description: 'Ensuring web content is accessible to all users, including those with disabilities.' },
           // Add more unique lectures for Web Designer
         ]
+        
       },
     ],
   }
