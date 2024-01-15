@@ -1,20 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { boardExamData } from "./Data";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShowDropdown(false);
+    }
+  };
+  const handleScroll = () => {
+    setShowDropdown(false);
+  };
+
+
+  useEffect(() => {
+    // Attach the event listener when the component mounts
+    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("scroll", handleScroll);
+
+    // Detach the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Navbarstyles>
       <nav>
         <ul className="StyledUl">
-        <li className="StyledLi" onClick={toggleDropdown}>
+        <li className="StyledLi" onClick={toggleDropdown} ref={dropdownRef}>
             <Link className="StyledLink">Course</Link>
             {showDropdown && (
               <div className="DropdownMenu">
@@ -134,6 +156,11 @@ const Navbarstyles = styled.div`
     text-decoration: none;
   }
 
+  .StyledLinkk {
+    color: #fff;
+    width:20vw;
+    text-decoration: none;
+  }
  
 `;
 

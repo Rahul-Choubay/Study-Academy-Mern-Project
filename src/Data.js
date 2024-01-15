@@ -201,8 +201,8 @@ export const boardExamData = [
     ],
   },
   {
-    id: 'Gov-Jop-Exam-Prep',
-    title: 'Gov-JoB-Exam-Prep',
+    id: 'Gov-Jop-Exam-Prep (Paid Batch)',
+    title: 'Gov-JoB-Exam-Prep  (Paid Batch)',
     classes: [
       {
         title: 'SCC JOBS',
@@ -252,8 +252,8 @@ export const boardExamData = [
     ],
   },
   {
-    id: 'Coding-job-Exam-Prep',
-    title: 'Coding-job-Exam-Prep',
+    id: 'Coding-job-Exam-Prep  (Paid Batch)',
+    title: 'Coding-job-Exam-Prep (Paid Batch)',
     classes: [
       {
         title: 'WEB Developers',

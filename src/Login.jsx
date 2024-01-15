@@ -3,6 +3,7 @@ import { GoogleLogin, GoogleLogout, FacebookLogin } from 'react-social-login';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
  display: flex;
@@ -116,7 +117,7 @@ const Login = () => {
           required
         />
         {error && <FormError>{error}</FormError>}
-        <Button type="submit">Log in</Button>
+        <Button type="submit"><Link to="/Dashboard" style={{color:'white', textDecoration:"none"}}>Login</Link></Button>
       </Form>
       <a href="#" style={{color:"white"}}>Forgot password?</a>
       <p>Create an account</p>

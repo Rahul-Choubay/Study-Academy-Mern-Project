@@ -57,7 +57,7 @@ const CourseNavigation = ({ onSelectClass }) => {
           >
             <button
               onClick={() => handleClassClick(course)}
-              style={{ width: "100%" }}
+              style={{ width: "98%" , height:"7vh", marginTop:"0.4rem", marginRight:"0.3rem", borderRadius:"0.8rem" }}
             >
               {course.title}
             </button>
