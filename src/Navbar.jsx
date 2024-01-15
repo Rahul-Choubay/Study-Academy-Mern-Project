@@ -42,8 +42,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/">
-              <img src="logo.png" alt="Description" />
+            <Link className="StyledLink" to="/" style={{backgroundColor:"white" , height:"20vh" , color:"black"}}>
+              Study Academy
             </Link>
           </li>
           <li className="StyledLi">
@@ -134,9 +134,7 @@ const Navbarstyles = styled.div`
     text-decoration: none;
   }
 
-  .StyledLink img {
-    width: 90%;
-  }
+ 
 `;
 
 
