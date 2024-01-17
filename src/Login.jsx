@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { GoogleLogin, GoogleLogout, FacebookLogin } from 'react-social-login';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
  display: flex;
@@ -76,7 +77,8 @@ const Login = () => {
  const [email, setEmail] = useState('');
  const [password, setPassword] = useState('');
  const [error, setError] = useState('');
-
+ 
+ const navigate = useNavigate();
  const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -87,6 +89,33 @@ const Login = () => {
       setError('Please fill in all fields');
     }
  };
+ useEffect(()=>{
+  const auth = localStorage.getItem('user');
+  if(auth)
+  {
+    navigate('/Dashboard')
+  }
+})
+ 
+ const handlelogin = async () => {
+     console.warn("email,password", email, password)
+     let result = await fetch("http://localhost:6600/login", {
+         method: 'post',
+         body: JSON.stringify({ email, password }),
+         headers: {
+             'Content-Type': 'application/json'
+         }
+     });
+     const data = await result.json()
+     console.warn(data);
+     if (data.email) {
+         localStorage.setItem("user", JSON.stringify(data));
+         navigate("/Dashboard")
+         
+     } else {
+         alert("pleses enter corect details")
+     }
+ }
 
  return (<>
  <div style={{width:"98.5vw", overflowX:"hidden"}}>
@@ -107,6 +136,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email or username"
           required
+         
         />
         <FormInput
           type="password"
@@ -115,9 +145,10 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
+        
         />
         {error && <FormError>{error}</FormError>}
-        <Button type="submit"><Link to="/Dashboard" style={{color:'white', textDecoration:"none"}}>Login</Link></Button>
+        <Button type="submit" onClick={handlelogin}>Login</Button>
       </Form>
       <a href="#" style={{color:"white"}}>Forgot password?</a>
       <p>Create an account</p>

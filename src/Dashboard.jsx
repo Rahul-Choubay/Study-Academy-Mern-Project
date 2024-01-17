@@ -39,7 +39,7 @@ const Dashboard = () => {
         </div>
         </div>
       </div>
-      <div>
+      <div style={{position:"absolute", top:"10rem", right:"20rem"}}>
       {renderTabContent()}
       </div>
       </div>

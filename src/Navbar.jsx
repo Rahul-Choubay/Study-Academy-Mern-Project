@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import { boardExamData } from "./Data";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
-
+  const auth = localStorage.getItem('user');
+  const navigate = useNavigate();
+  const logout = () => {
+      localStorage.clear('user');
+      navigate('/signup')
+  }
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
@@ -31,11 +36,63 @@ const Navbar = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+ 
 
   return (
     <Navbarstyles>
       <nav>
-        <ul className="StyledUl">
+      {auth ?    
+           <ul className="StyledUl">
+        <li className="StyledLi" onClick={toggleDropdown} ref={dropdownRef}>
+            <Link className="StyledLink">Course</Link>
+            {showDropdown && (
+              <div className="DropdownMenu">
+                <div className="DropdownItem">
+                  {boardExamData.map((course, index) => (
+                    <div key={index}>
+                      <h3 style={{margin:"1.2rem"}}>{course.title}</h3>
+                      <ul>
+                        {course.classes.map((cls, clsIndex) => (
+                          <li key={clsIndex}>
+                            <Link className="linkk" to={cls.url}>{cls.title}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+          {/* Other Navbar items */}
+          <li className="StyledLi">
+            <Link className="StyledLink" to="">
+              <input type="search" placeholder="search" />
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/" style={{backgroundColor:"white" , height:"20vh" , color:"black"}}>
+              Study Academy
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/openai">
+              Get AI Tutoring
+            </Link>
+          </li>
+          <li className="StyledLi">
+            <Link className="StyledLink" to="/donation">
+              Donate
+            </Link>
+          </li>
+      <li className="StyledLi">
+      <Link onClick={logout} className="StyledLink" to="/signup">
+        Logout ({JSON.parse(auth).username})
+      </Link>
+    </li>
+      </ul>
+    :
+    <ul className="StyledUl">
         <li className="StyledLi" onClick={toggleDropdown} ref={dropdownRef}>
             <Link className="StyledLink">Course</Link>
             {showDropdown && (
@@ -79,17 +136,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/login">
-              Log in
-            </Link>
-          </li>
-          <li className="StyledLi">
-            <Link className="StyledLink" to="/signup">
-              Sign up
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <Link className="StyledLink" to="/login">
+          Log in
+        </Link>
+      </li>
+      <li className="StyledLi">
+        <Link className="StyledLink" to="/signup">
+          Sign up
+        </Link>
+      </li>
+    
+    </ul>
+  }   </nav>
     </Navbarstyles>
   );
 };

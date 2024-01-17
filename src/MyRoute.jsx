@@ -10,6 +10,7 @@ import About from './About';
 import Openai from './Openai';
 import DonationPage from './DonationPage';
 import Dashboard from './Dashboard';
+import CoursePage from './CoursePage';
 
 const MyRoute = () => {
   return (
@@ -23,6 +24,7 @@ const MyRoute = () => {
       <Route path="/openai" element={<Openai />} />
       <Route path="/donation" element={<DonationPage />} /> 
       <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/courses" element={<CoursePage />} />
     </Routes>
   );
 };
