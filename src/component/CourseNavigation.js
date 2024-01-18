@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { boardExamData } from "./Data";
+import { boardExamData } from "../data/Data";
 
 const CourseNavigation = ({ onSelectClass }) => {
   const [activeDropdowns, setActiveDropdowns] = useState({});

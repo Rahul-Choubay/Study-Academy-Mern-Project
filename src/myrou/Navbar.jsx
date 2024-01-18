@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-import { boardExamData } from "./Data";
+import { boardExamData } from "../data/Data";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);

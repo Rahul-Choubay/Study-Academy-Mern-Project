@@ -1,16 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Homepage from './Homepage';
+import Homepage from '../component/Homepage';
 import Sign from './Sign';
-import Mainpage from './Mainpage';
+import Mainpage from '../component//Mainpage';
 import SignUp from './Signup';
 import Login from './Login';
-import Classepage from './Classepage';
-import About from './About';
-import Openai from './Openai';
-import DonationPage from './DonationPage';
-import Dashboard from './Dashboard';
-import CoursePage from './CoursePage';
+import Classepage from '../component/Classepage';
+import Openai from '../component/Openai';
+import DonationPage from '../component/DonationPage';
+import Dashboard from '../component/Dashboard';
+import CoursePage from '../component/CoursePage';
 
 const MyRoute = () => {
   return (
@@ -20,7 +19,6 @@ const MyRoute = () => {
       <Route path="/signup" element={<Sign />} />
       <Route path="/login" element={<Login />} />
       <Route path="/classpage/:classId" element={<Classepage />} />
-      <Route path="/about" element={<About />} />
       <Route path="/openai" element={<Openai />} />
       <Route path="/donation" element={<DonationPage />} /> 
       <Route path="/Dashboard" element={<Dashboard />} />

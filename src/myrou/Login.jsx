@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleLogin, GoogleLogout, FacebookLogin } from 'react-social-login';
 import styled from 'styled-components';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from '../component/Footer';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 

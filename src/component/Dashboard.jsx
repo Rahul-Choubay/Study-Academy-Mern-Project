@@ -3,7 +3,7 @@ import MyAccount from './MyAccount';
 import Progress from './Progress';
 import Profile from './Profile';
 import Teachers from './Teachers';
-import Navbar from './Navbar';
+import Navbar from '../myrou/Navbar';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('myAccount');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { boardExamData } from './Data';
-import Navbar from './Navbar';
+import { boardExamData } from '../data/Data';
+import Navbar from '../myrou/Navbar';
 
 const Classepage = () => {
   const { classId } = useParams();

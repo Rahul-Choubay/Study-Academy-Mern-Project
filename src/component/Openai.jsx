@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Navbar  from './Navbar';
-import { dummyData } from './Data'
+import Navbar  from '../myrou/Navbar';
+import { dummyData } from '../data/Data'
 
 const Openai = () => {
   const [userInput, setUserInput] = useState('');

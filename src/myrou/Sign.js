@@ -1,7 +1,7 @@
 import React from "react";
 import SignUp from "./Signup";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Footer from "../component/Footer";
 
 const Sign=()=>{
     return(

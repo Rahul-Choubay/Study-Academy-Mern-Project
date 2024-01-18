@@ -1,4 +1,3 @@
-// CoursePage.js
 import React, { useState } from 'react';
 import Progress from './Progress';
 

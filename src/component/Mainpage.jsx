@@ -1,6 +1,5 @@
 import Homepage from './Homepage';
-import Navbar from './Navbar';
-import List from './List';
+import Navbar from '../myrou/Navbar';
 import CourseNavigation from './CourseNavigation'
 import Testimonial from './Testimonial';
 import Footer from './Footer';
@@ -12,7 +11,6 @@ function Mainpage() {
     <div style={{width:"98.5vw", overflow:"hidden"}}>
      <Navbar />
      <Homepage />
-     <List />
      <CourseNavigation />
      <Testimonial />
      <Learners />

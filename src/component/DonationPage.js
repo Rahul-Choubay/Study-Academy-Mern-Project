@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Navbar from './Navbar';
+import Navbar from '../myrou/Navbar';
 const Wrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
