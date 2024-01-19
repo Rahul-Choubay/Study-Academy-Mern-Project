@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Learners from './Learners';
 import JoinPage from './JoinPage';
 
+
 function Mainpage() {
   return (
     <div style={{width:"98.5vw", overflow:"hidden"}}>
@@ -16,7 +17,6 @@ function Mainpage() {
      <Learners />
      <JoinPage />
      <Footer />
-     
     </div>
   );
 }
