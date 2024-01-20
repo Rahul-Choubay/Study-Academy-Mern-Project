@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {useNavigate} from 'react-router-dom';
 
 const StudentSignUp = () => {
-  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,9 +15,6 @@ const StudentSignUp = () => {
         navigate('/Dashboard')
       }
   })
-  const handleDateChange = (e) => {
-    setDateOfBirth(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +48,7 @@ const StudentSignUp = () => {
       {!showForm ? (
         <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
           <h2 style={{ justifyContent: 'center', textAlign: 'center' }}>Student Sign Up</h2>
-          <input style={{ height: '6vh', marginBottom: '0.4rem' }} type="date" value={dateOfBirth} onChange={handleDateChange} />
+          <input style={{ height: '6vh', marginBottom: '0.4rem' }} type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
           <button style={{ height: '6vh', marginTop: '1rem' }} type="submit">Next</button>
         </form>
       ) : (

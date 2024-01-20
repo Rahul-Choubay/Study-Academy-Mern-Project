@@ -151,7 +151,7 @@ const Login = () => {
         <Button type="submit" onClick={handlelogin}>Login</Button>
       </Form>
       <a href="#" style={{color:"white"}}>Forgot password?</a>
-      <p>Create an account</p>
+      <a href="/signup">Create an account</a>
       </div>
       </div>
     </Container>

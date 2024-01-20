@@ -90,6 +90,11 @@ const Navbar = () => {
         Logout ({JSON.parse(auth).username})
       </Link>
     </li>
+    <li className="StyledLi">
+      <Link  className="StyledLink" to="/Dashboard">
+        Dashboard
+      </Link>
+    </li>
       </ul>
     :
     <ul className="StyledUl">

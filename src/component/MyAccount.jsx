@@ -21,7 +21,7 @@ const MyAccount = () => {
             <strong>Email:</strong> {userInfo.email}
           </p>
           <p>
-            <strong>Bio:</strong> {userInfo.dob}
+            <strong>Date Of Birth</strong> {userInfo.dateOfBirth}
           </p>
         </div>
       )}
