@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { boardExamData } from "../data/Data";
+import { boardExamData, paidBatch } from "../data/Data";
 
 const CourseNavigation = ({ onSelectClass }) => {
   const [activeDropdowns, setActiveDropdowns] = useState({});
@@ -20,6 +20,8 @@ const CourseNavigation = ({ onSelectClass }) => {
       console.error('onSelectClass is not a function');
     }
   };
+
+  const combinedData = [...boardExamData, ...paidBatch];
 
   return (
     <nav
@@ -47,7 +49,7 @@ const CourseNavigation = ({ onSelectClass }) => {
           borderRadius: "10px",
         }}
       >
-        {boardExamData.map((course) => (
+        {combinedData.map((course) => (
           <div
             key={course.id}
             style={{
@@ -57,7 +59,7 @@ const CourseNavigation = ({ onSelectClass }) => {
           >
             <button
               onClick={() => handleClassClick(course)}
-              style={{ width: "98%" , height:"7vh", marginTop:"0.4rem", marginRight:"0.3rem", borderRadius:"0.8rem" }}
+              style={{ width: "98%", height: "7vh", marginTop: "0.4rem", marginRight: "0.3rem", borderRadius: "0.8rem" }}
             >
               {course.title}
             </button>

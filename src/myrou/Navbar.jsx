@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-import { boardExamData } from "../data/Data";
+import { boardExamData, paidBatch } from "../data/Data";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -37,7 +37,7 @@ const Navbar = () => {
     };
   }, []);
  
-
+  const combinedData = [...boardExamData, ...paidBatch];
   return (
     <Navbarstyles>
       <nav>
@@ -48,7 +48,7 @@ const Navbar = () => {
             {showDropdown && (
               <div className="DropdownMenu">
                 <div className="DropdownItem">
-                  {boardExamData.map((course, index) => (
+                  {combinedData.map((course, index) => (
                     <div key={index}>
                       <h3 style={{margin:"1.2rem"}}>{course.title}</h3>
                       <ul>
@@ -103,7 +103,7 @@ const Navbar = () => {
             {showDropdown && (
               <div className="DropdownMenu">
                 <div className="DropdownItem">
-                  {boardExamData.map((course, index) => (
+                  {combinedData.map((course, index) => (
                     <div key={index}>
                       <h3 style={{margin:"1.2rem"}}>{course.title}</h3>
                       <ul>

@@ -1,57 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../myrou/Navbar';
-const Wrapper = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`;
-
-const Title = styled.h2`
-  text-align: center;
-  color: #333;
-`;
-
-const InputWrapper = styled.div`
-  margin-bottom: 16px;
-`;
-
-const InputLabel = styled.label`
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
-`;
-
-const DonationInput = styled.input`
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-`;
-
-const DonateButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
-const DonationDisplay = styled.div`
-  margin-top: 20px;
-`;
-
-const DonationItem = styled.div`
-  margin-bottom: 8px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-`;
 
 const DonationPage = () => {
   const [donationAmount, setDonationAmount] = useState('');
@@ -75,28 +24,77 @@ const DonationPage = () => {
     <div style={{width:"98.5", overflow:"hidden"}}>
     <Navbar />
     <Wrapper>
-      <Title>Make a Donation Study Academy</Title>
-      <InputWrapper>
-        <InputLabel>Enter Donation Amount:</InputLabel>
-        <DonationInput
+      <h2 className='Title'>Make a Donation Study Academy</h2>
+      <div className='InputWrapper'>
+        <label className='InputLabel'>Enter Donation Amount:</label>
+        <input
+        className='DonationInput'
           type="number"
           value={donationAmount}
           onChange={(e) => setDonationAmount(e.target.value)}
         />
-      </InputWrapper>
-      <DonateButton onClick={handleDonate}>Donate</DonateButton>
+      </div>
+      <button className='DonateButton' onClick={handleDonate}>Donate</button>
 
       {donations.length > 0 && (
-        <DonationDisplay>
+        <div className='DonationDisplay'>
           <h3>Recent Donations:</h3>
           {donations.map((amount, index) => (
-            <DonationItem key={index}>${amount.toFixed(2)}</DonationItem>
+            <div className='DonationItem' key={index}>${amount.toFixed(2)}</div>
           ))}
-        </DonationDisplay>
+        </div>
       )}
     </Wrapper>
     </div>
   );
 };
+const Wrapper = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .InputWrapper {
+    margin-bottom: 16px;
+    .InputLabel{
+      display: block;
+      margin-bottom: 8px;
+      color: #555; 
+    }
+    .DonationInput{
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+  }
+ .Title { 
+  text-align: center;
+  color: #333;
+ }
+  .DonateButton{
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  DonationDisplay{
+    margin-top: 20px;
+    .DonationItem {
+      margin-bottom: 8px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  }
+`;
+
+
+
+
 
 export default DonationPage;

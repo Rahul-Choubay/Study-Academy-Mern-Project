@@ -17,9 +17,9 @@ const Homepage = () => {
             <h2>For every student, every classroom. Real results..</h2>
             <p>We’re a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.</p>
             <div className="btndiv" style={{display:"flex", flexDirection:"row"}}>
-            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></div>  
-            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Teacher</Link></div>  
-            <div className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Parents</Link> </div>  {/* Corrected spelling from 'Perents' to 'Parents' */}
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></button>  
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Teacher</Link></button>  
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Parents</Link> </button>  {/* Corrected spelling from 'Perents' to 'Parents' */}
             </div>
           </div>
           </div>
