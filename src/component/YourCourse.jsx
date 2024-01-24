@@ -14,8 +14,8 @@ const YourCourse = () => {
 
   return (
     <div style={{display:'flex', FlexDirection:"row"}}>
-      <div>Your Course Content</div>
-      <button onClick={handleButtonClick} style={{marginLeft:"2rem", width:"50vw", borderRight:"1px solid black"}}>Add Other Course</button>
+      <div style={{width:"50%", borderRight:"1px solid black" , minHeight:"70vh"}}>Your Course Content</div>
+      <button onClick={handleButtonClick} style={{marginLeft:"2rem", width:"14vw",height:"6vh", borderRight:"1px solid black"}}>Add Other Course</button>
       <CustomModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
